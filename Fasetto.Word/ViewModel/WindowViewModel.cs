@@ -28,15 +28,16 @@ namespace Fasetto.Word
         public int WindowMinimumWidht { get; set; } = 400;
 
         public int WindowMinimumHeight { get; set; } = 300;
-        
+
+        public bool BorderLess { get => mWindow.WindowState == WindowState.Maximized; }
         /// <summary>
         /// Size of the borders arround
         /// </summary>
-        public int ResizeBorder { get; set; } = 6;
+        public int ResizeBorder { get => BorderLess ? 0 : 6; }
 
         public Thickness ResizeBorderThickness { get => new Thickness(ResizeBorder + OuterMarginSize); }
 
-        public Thickness InnerContentPadding { get => new Thickness(ResizeBorder); }
+        public Thickness InnerContentPadding { get; set; } = new Thickness(0);
         
         /// <summary>
         /// The margin arround the window to allow drop shadow
@@ -75,6 +76,8 @@ namespace Fasetto.Word
         public int TitleHight { get; set; } = 42;
 
         public GridLength TitleHightGridLenght { get => new GridLength(TitleHight + ResizeBorder); }
+
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
         #endregion
 
         #region Commands

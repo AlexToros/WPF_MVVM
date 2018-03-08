@@ -73,7 +73,7 @@
                                         </Grid>
                                         
                                         <!-- Title-->
-                                        <Grid Grid.Column="1">
+                                        <Grid Grid.Column="0" Grid.ColumnSpan="3">
                                             <Viewbox Margin="0">
                                                 <TextBlock Style= "{StaticResource HeaderText}" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title, FallbackValue='Welcome, friends!'}"/>
                                             </Viewbox>
@@ -113,6 +113,6 @@
     </WindowChrome.WindowChrome>
     
     <Grid Background="{StaticResource ForegroundLightBrush}">
-        
+        <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}"/>
     </Grid>
 </Window>
