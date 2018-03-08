@@ -74,8 +74,13 @@
                                         
                                         <!-- Title-->
                                         <Grid Grid.Column="0" Grid.ColumnSpan="3">
-                                            <Viewbox Margin="0">
-                                                <TextBlock Style= "{StaticResource HeaderText}" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title, FallbackValue='Welcome, friends!'}"/>
+                                            <Viewbox Margin="5">
+                                                <StackPanel>
+                                                    <TextBlock FontFamily="{StaticResource LatoBold}" TextAlignment="Center" FontSize="{StaticResource FontSizeRegular}" Margin="0 0 0 -5">
+                                                        <Run Text="W" Foreground="{StaticResource WordOrangeBrush}"/><Run Text="O" Foreground="{StaticResource WordBlueBrush}"/><Run Text="R" Foreground="{StaticResource WordRedBrush}"/><Run Text="D" Foreground="{StaticResource WordGreenBrush}"/>
+                                                    </TextBlock>
+                                                    <TextBlock Text="by Fasetto"  Foreground="{StaticResource ForegroundDarkBrush}" TextAlignment="Center"/>
+                                                </StackPanel>
                                             </Viewbox>
                                         </Grid>
                                         
