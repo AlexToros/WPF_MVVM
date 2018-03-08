@@ -49,8 +49,6 @@
                                         
                                         <!--Title Bar-->
                                         <RowDefinition Height="{Binding TitleHightGridLenght, FallbackValue=42}"/>
-                                        <!--DropShadow-->
-                                        <RowDefinition Height="Auto"/>
                                         <!--Content-->
                                         <RowDefinition Height="*"/>
                                         
@@ -89,29 +87,9 @@
                                             <Button Style="{StaticResource WindowCloseButton}" Content="X" Command="{Binding CloseCommand}"/>
                                         </StackPanel>
                                     </Grid>
-                                    
-                                    <!--DropShadow-->
-                                    <Grid Grid.Row="1">
-                                        <Border Height="5" BorderThickness="0 0.2 0 0">
-                                            <!-- Underline -->
-                                            <Border.BorderBrush>
-                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1, 0">
-                                                    <GradientStop Color="{StaticResource ForegroundLight}" Offset="0.0"/>
-                                                    <GradientStop Color="{StaticResource ForegroundVeryDark}" Offset="0.5"/>
-                                                    <GradientStop Color="{StaticResource ForegroundLight}" Offset="1.0"/>
-                                                </LinearGradientBrush>
-                                            </Border.BorderBrush>
-                                            <!--DropShadow-->
-                                            <Border.Background>
-                                                <LinearGradientBrush StartPoint="0,0" EndPoint="0, 1">
-                                                    <GradientStop Color="{StaticResource BackgoundVeryLight}" Offset="0.0"/>
-                                                    <GradientStop Color="{StaticResource ForegroundLight}" Offset="1.0"/>
-                                                </LinearGradientBrush>
-                                            </Border.Background>
-                                        </Border>
-                                    </Grid>
+
                                     <!--Page Content-->
-                                    <Grid Grid.Row="2">
+                                    <Grid Grid.Row="1">
                                         <Border Padding="{Binding InnerContentPadding}">
                                             <ContentPresenter Content="{TemplateBinding Content}"/>
                                         </Border>
